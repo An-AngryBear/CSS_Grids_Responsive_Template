@@ -1,45 +1,37 @@
+.nav {
+  min-height: 10vh;
+  background-color: peachpuff; }
 
+.container .page-header, .container .sidebar, .container .main {
+  min-height: 25vh; }
 
+.container .page-header {
+  background-color: lightblue; }
+
+.container .sidebar {
+  background-color: lightgreen; }
+
+.container .main {
+  background-color: salmon; }
+
+.container .footer {
+  background-color: violet;
+  min-height: 15vh; }
+
+h1 {
+  margin: 0; }
 
 @media screen and (min-width: 600px) {
-
-    .nav {
-        min-height: 100px;
-        background-color: peachpuff;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows: auto 1fr 3fr 1fr;
-        grid-template-areas:
-            "header header header"
-            "sidebar main main"
-            "sidebar main main"
-            "footer footer footer";
-    }
-
-    .page-header {
-        background-color:lightblue;
-        min-height: 200px;
-        grid-area: header;
-    }
-
-    .sidebar {
-        background-color:lightgreen;
-        min-height: 200px;
-        grid-area: sidebar;
-    }
-
-    .main {
-        background-color: salmon;
-        min-height: 200px;
-        grid-area: main;
-    }
-
-    .footer {
-        background-color: violet;
-        min-height: 200px;
-        grid-area: footer;
-    }
-}
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr 3fr 1fr;
+    grid-template-areas: "header header header" "sidebar main main" "sidebar main main" "footer footer footer"; }
+    .container .page-header {
+      grid-area: header; }
+    .container .sidebar {
+      grid-area: sidebar; }
+    .container .main {
+      grid-area: main; }
+    .container .footer {
+      grid-area: footer; } }
