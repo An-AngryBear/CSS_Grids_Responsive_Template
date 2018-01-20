@@ -1,0 +1,45 @@
+
+
+
+@media screen and (min-width: 600px) {
+
+    .nav {
+        min-height: 100px;
+        background-color: peachpuff;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto 1fr 3fr 1fr;
+        grid-template-areas:
+            "header header header"
+            "sidebar main main"
+            "sidebar main main"
+            "footer footer footer";
+    }
+
+    .page-header {
+        background-color:lightblue;
+        min-height: 200px;
+        grid-area: header;
+    }
+
+    .sidebar {
+        background-color:lightgreen;
+        min-height: 200px;
+        grid-area: sidebar;
+    }
+
+    .main {
+        background-color: salmon;
+        min-height: 200px;
+        grid-area: main;
+    }
+
+    .footer {
+        background-color: violet;
+        min-height: 200px;
+        grid-area: footer;
+    }
+}
