@@ -18,4 +18,4 @@ The purpose of this is to show how easy it is to make a basic mobile responsive 
     every save on the Sass file will be watched and will update grids.css
 4. Run on local [server](http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server);
 
-#### sidenote: Sass requires Ruby to be installed locally, if you are not on an Apple machine or don't have it installed locally, instructions can be [Here](https://sass-lang.com/install)
+#### sidenote: Sass requires Ruby to be installed locally, if you are not on an Apple machine or don't have it installed locally, instructions can be found [Here](https://sass-lang.com/install)
