@@ -1,8 +1,9 @@
-.nav 
-    min-height: 10vh
-    background-color: peachpuff
 
+//MOBILE: Styles the smallest screen size and up. No grid has been implemented for mobile.
 .container
+    .nav 
+        min-height: 10vh
+        background-color: peachpuff
     .page-header, .sidebar, .main
         min-height: 25vh
     .page-header
@@ -11,26 +12,62 @@
         background-color: lightgreen
     .main
         background-color: salmon
+        .a
+            background-color: green
+        .b
+            background-color: red
+        .c
+            background-color: blue
+        .d
+            background-color: goldenrod
+        .a, .b
+            min-height: 10vh
+        .c, .d
+            min-height: 5vh
     .footer
         background-color: violet
         min-height: 15vh
 
-h1
+h1, p
     margin: 0
 
+//TABLET : Styles window-width (600px) and up.
 @media screen and (min-width: 600px) 
     
     .container 
-        display: grid
-        grid-template-columns: 1fr 2fr 1fr
-        grid-template-rows: auto 1fr 3fr 1fr
-        grid-template-areas: "header header header" "sidebar main main" "sidebar main main" "footer footer footer"
+        display: grid //all direct children of this element (.container) will be grid items
+        grid-template-columns: 1fr 2fr 1fr //set columns for this grid (fr means 'fraction of available space')
+        grid-template-rows: auto auto 1fr 3fr 1fr //set rows
+        grid-template-areas: "nav nav nav" "header header header" "sidebar main main" "sidebar main main" "footer footer footer" 
+                            //grid template-areas basically let you establish the layout of the grid. In sass this must be all
+                            //put on one line. In CSS it's easier to see visually if you lay it out as such (5 ROWS, 3 COLUMNS):
+
+                            //nav nav nav
+                            //header header header
+                            //sidebar main main
+                            //sidebar main main
+                            //footer footer footer
+
+                            //change this in each media query to easily adjust your layout for different screen sizes
+        .nav
+            grid-area: nav //grid area items to fit into your grid-template-areas
         .page-header 
             grid-area: header
         .sidebar 
             grid-area: sidebar
         .main 
+            display: grid //sets main as a new grid within a child of the outer grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-template-rows: 1fr 1fr
             grid-area: main
+            grid-template-areas: "a b c" "a b d"
+            .a
+                grid-area: a
+            .b
+                grid-area: b
+            .c
+                grid-area: c
+            .d
+                grid-area: d
         .footer 
             grid-area: footer
-    

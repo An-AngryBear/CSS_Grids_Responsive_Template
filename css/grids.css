@@ -1,4 +1,4 @@
-.nav {
+.container .nav {
   min-height: 10vh;
   background-color: peachpuff; }
 
@@ -13,25 +13,51 @@
 
 .container .main {
   background-color: salmon; }
+  .container .main .a {
+    background-color: green; }
+  .container .main .b {
+    background-color: red; }
+  .container .main .c {
+    background-color: blue; }
+  .container .main .d {
+    background-color: goldenrod; }
+  .container .main .a, .container .main .b {
+    min-height: 10vh; }
+  .container .main .c, .container .main .d {
+    min-height: 5vh; }
 
 .container .footer {
   background-color: violet;
   min-height: 15vh; }
 
-h1 {
+h1, p {
   margin: 0; }
 
 @media screen and (min-width: 600px) {
   .container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto 1fr 3fr 1fr;
-    grid-template-areas: "header header header" "sidebar main main" "sidebar main main" "footer footer footer"; }
+    grid-template-rows: auto auto 1fr 3fr 1fr;
+    grid-template-areas: "nav nav nav" "header header header" "sidebar main main" "sidebar main main" "footer footer footer"; }
+    .container .nav {
+      grid-area: nav; }
     .container .page-header {
       grid-area: header; }
     .container .sidebar {
       grid-area: sidebar; }
     .container .main {
-      grid-area: main; }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-area: main;
+      grid-template-areas: "a b c" "a b d"; }
+      .container .main .a {
+        grid-area: a; }
+      .container .main .b {
+        grid-area: b; }
+      .container .main .c {
+        grid-area: c; }
+      .container .main .d {
+        grid-area: d; }
     .container .footer {
       grid-area: footer; } }
